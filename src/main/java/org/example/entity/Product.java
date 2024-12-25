@@ -1,9 +1,7 @@
-package org.example;
+package org.example.entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.List;
 
 @Getter
 @Setter
@@ -14,6 +12,5 @@ public class Product  {
     private String description;
     private Long price;
     private Category category;
-
 }
 

@@ -1,8 +1,9 @@
-package org.example;
+package org.example.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
+import org.example.RoleEnum;
 
 @Getter
 @Setter

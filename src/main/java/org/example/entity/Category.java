@@ -1,8 +1,6 @@
-package org.example;
+package org.example.entity;
 
 import lombok.*;
-
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -10,11 +8,7 @@ import java.util.List;
 @Setter
 @ToString
 public class Category   {
-
     private Integer id;
     private String name;
     private String description;
-    private Category parent;
-    private List<Category> children;
-
 }

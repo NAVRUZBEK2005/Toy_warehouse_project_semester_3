@@ -9,7 +9,6 @@ import org.example.RoleEnum;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDTO {
-
     private Integer id;
     private String firstName;
     private String lastName;

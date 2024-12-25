@@ -1,8 +1,8 @@
 package org.example.dao;
 
-import org.example.Category;
-import org.example.DatabaseUtil;
 import org.example.dto.CategoryDTO;
+import org.example.entity.Category;
+import org.example.DBService.DatabaseUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
