@@ -13,7 +13,7 @@ public class CategoryDAO {
     public void addCategory(CategoryDTO category) throws SQLException {
         String query = "INSERT INTO categories (name, description) VALUES (?, ?)";
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, category.getName());
@@ -26,7 +26,7 @@ public class CategoryDAO {
         List<Category> categories = new ArrayList<>();
         String query = "SELECT * FROM categories";
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              Statement statement = connection.createStatement();
              ResultSet resultSet = statement.executeQuery(query)) {
 
@@ -45,7 +45,7 @@ public class CategoryDAO {
         String query = "SELECT * FROM categories WHERE id = ?";
         Category category = null;
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setInt(1, id);
@@ -64,7 +64,7 @@ public class CategoryDAO {
     public void updateCategory(int id, CategoryDTO category) throws SQLException {
         String query = "UPDATE categories SET name = ?, description = ? WHERE id = ?";
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, category.getName());
@@ -77,7 +77,7 @@ public class CategoryDAO {
     public void removeCategory(int id) throws SQLException {
         String query = "DELETE FROM categories WHERE id = ?";
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setInt(1, id);

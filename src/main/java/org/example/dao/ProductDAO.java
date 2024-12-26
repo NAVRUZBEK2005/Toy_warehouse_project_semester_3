@@ -15,7 +15,7 @@ public class ProductDAO {
     public void addProduct(ProductDTO product) throws SQLException {
         String query = "INSERT INTO products (name, description, price, category_id) VALUES (?, ?, ?, ?)";
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, product.getName());
@@ -35,7 +35,7 @@ public class ProductDAO {
             FROM products p
         """;
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
 
@@ -62,7 +62,7 @@ public class ProductDAO {
     public void updateProduct(int id, ProductDTO product) throws SQLException {
         String query = "UPDATE products SET name = ?, description = ?, price = ?, category_id = ? WHERE id = ?";
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setString(1, product.getName());
@@ -78,7 +78,7 @@ public class ProductDAO {
     public void removeProduct(int id) throws SQLException {
         String query = "DELETE FROM products WHERE id = ?";
 
-        try (Connection connection = DatabaseUtil.getConnection();
+        try (Connection connection = DatabaseUtil.getInstance();
              PreparedStatement statement = connection.prepareStatement(query)) {
 
             statement.setInt(1, id);

@@ -3,7 +3,7 @@ package org.example.entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import org.example.RoleEnum;
+import org.example.enums.RoleEnum;
 
 @Getter
 @Setter
